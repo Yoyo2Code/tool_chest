@@ -1,0 +1,15 @@
+<div class="tool_info">
+  <% @tools.each do |tool| %>
+  <ul>
+    <li><strong>Name:</strong>     <%= tool.name %></li> <br/>
+    <li><strong>Price:</strong>    <%= tool.price %></li> <br/>
+    <li><strong>Quantity:</strong> <%= tool.quantity %></li> <br/>
+    <%= link_to "Edit Tool", edit_tool_path(tool.id) %></li>
+    <%= link_to "Delete Tool", tool_path(tool.id), method: :delete %>
+  </ul>
+      <br/>
+<br/>
+  <% end %>
+</div>
+
+<%= link_to "New Tool!", new_tool_path %>
